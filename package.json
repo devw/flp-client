@@ -4,7 +4,7 @@
     "main": "index.js",
     "license": "MIT",
     "scripts": {
-        "build:dev": "webpack --mode=development",
+        "build:dev": "webpack --mode=development; mv dist docs; rm -rf dist",
         "start": "open dist/index.html"
     },
     "devDependencies": {
