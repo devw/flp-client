@@ -1,0 +1,22 @@
+{
+  "editor.formatOnSave": true,
+  "prettier": {
+    "printWidth": 120,
+    "semi": true,
+    "singleQuote": true,
+    "tabWidth": 4,
+  },
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+  "html.validate.styles": true,
+  "html.validate.scripts": true,
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#808628",
+    "titleBar.activeBackground": "#808628",
+    "titleBar.activeForeground": "#FCFAFD"
+  }
+}
