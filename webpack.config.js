@@ -14,6 +14,10 @@ const config = {
                 test: /\.html$/i,
                 loader: 'html-loader',
             },
+            {
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader'],
+            },
         ],
     },
 };
@@ -23,7 +27,7 @@ const environment = {
         APP_API: 'https://localhost:8081',
     },
     production: {
-        APP_API: 'https://localhost:8081',
+        APP_API: 'https://antp.link:8080',
     },
 };
 

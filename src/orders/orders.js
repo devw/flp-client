@@ -1,5 +1,6 @@
-import { getLastChild, getCookie } from '../utils';
+import { getLastChild, getCookie, showRefreshToken } from '../utils';
 import html from './orders.html';
+import css from './orders.css';
 
 const APP_API = process.env.APP_API;
 
@@ -11,13 +12,9 @@ const showOrders = ({ target }, stdout) => (target.nextElementSibling.innerHTML 
 
 const submitHandler = async (e) => {
     e.preventDefault();
-    try {
-        const res = await fetch(`${APP_API}/orders/${getOrders(e).join(',')}`, getHeader());
-        showOrders(e, await res.text());
-    } catch (error) {
-        console.log('Error', error);
-        e.target.nextElementSibling.innerText = 'Refresh the tokens!';
-    }
+    const res = await fetch(`${APP_API}/orders/${getOrders(e).join(',')}`, getHeader());
+    const resText = await res.text();
+    resText === 'Forbidden' ? showRefreshToken() : showOrders(e, resText);
 };
 
 export const init = () => {

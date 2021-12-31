@@ -5,5 +5,12 @@ export const getLastChild = (node, selector) => {
 
 export const getCookie = (cookie) => {
     const callback = (row) => row.startsWith(`${cookie}=`);
-    return document.cookie.split('; ').find(callback).split('=')[1];
+    return document.cookie?.split('; ')?.find(callback)?.split('=')[1];
 };
+
+export const showRefreshToken = () => {
+    document.querySelector('#auth').classList.remove('hidden');
+    document.querySelector('#orders').innerText = '';
+};
+
+export const hideRefreshToken = () => document.querySelector('#auth').classList.add('hidden');
